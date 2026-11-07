@@ -35,6 +35,9 @@ Native HTML elements, visible labels, programmatic error descriptions, keyboard 
 - Buttons default to type="button"; pass type="submit" when they submit a form.
 - This is not a full design system, routing framework, form state library or authorization layer.
 
+## Publishing status
+The package is not yet published to npm. See [NPM-PUBLISHING.md](./NPM-PUBLISHING.md) for scope ownership, first-publication and OIDC trusted-publisher setup. Do not tell consuming projects to install from npm until the first public release has been verified.
+
 ## Compatibility and provenance
 - React and React DOM are peer dependencies (>=18.2).
 - No runtime UI framework or icon package is bundled.
