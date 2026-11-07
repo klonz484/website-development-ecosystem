@@ -33,6 +33,7 @@ jobs:
       - run: npm test
       - run: npm run build
       - name: Commit synchronized package lockfile to this pull request
+        working-directory: ../..
         if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
         env:
           BRANCH: ${{ github.head_ref }}
