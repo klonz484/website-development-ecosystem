@@ -32,5 +32,4 @@ jobs:
       - run: npm run test
       - run: npm run build
       - run: npx playwright install --with-deps chromium
-      - run: npm run dev -- --host 127.0.0.1 > /tmp/starter-vite.log 2>&1 &
       - run: npx playwright test
