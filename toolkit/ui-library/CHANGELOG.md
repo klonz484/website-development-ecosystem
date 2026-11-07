@@ -7,7 +7,7 @@
 - Added dashboard cards, statistic cards and page header.
 - Added accessible component tests and adoption guidance.
 
-## 0.1.1 — accessibility and release hardening (in review)
+## Unreleased — accessibility and release hardening
 - Connected checkbox and switch help descriptions to their controls for assistive technology.
 - Fully disabled non-essential spinner and switch motion when reduced motion is requested.
 - Added a release-grade manual accessibility test matrix and axe-based consumer testing guidance.
