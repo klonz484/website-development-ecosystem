@@ -24,7 +24,8 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "typecheck": "tsc --noEmit -p tsconfig.json",
-    "test": "vitest run"
+    "test": "vitest run",
+    "check:contrast": "node scripts/check-contrast.mjs"
   },
   "peerDependencies": {
     "react": ">=18.2.0",

@@ -2,19 +2,20 @@
 
 ## Automated checks
 
-- [ ] Component unit tests verify labels, hint/error descriptions, accessible names, native semantics and state.
+- [x] Component unit tests verify labels, hint/error descriptions, accessible names, native semantics and state (automated unit suite; see CI).
+- [x] Semantic token contrast script checks light/dark text, button, focus and border token pairs against WCAG AA thresholds (automated CI gate).
 - [ ] Consumer Playwright suite runs axe-core on onboarding, navigation, forms and modal states using WCAG 2.2 AA tags.
 - [ ] No serious or critical automated violations remain; every excluded rule has a written reason and owner.
 - [ ] Keyboard-flow assertions cover navigation, modal entry, focus containment, Escape dismissal and focus return.
 - [ ] Run automated checks against production-built output, not only a development server.
 
-## Manual release gate — record browser, OS, assistive technology and date
+## Manual release gate — NOT YET COMPLETED\n\nAutomated checks do not establish conformance. The following checks must be performed on real devices and assistive technology and recorded below before declaring the release accessible.\n\n### Evidence log\n\n| Date | Tester | Device / OS | Browser | Assistive technology | Components / flows | Result | Issue links |\n|---|---|---|---|---|---|---|---|\n| Pending | | | | | | Not tested | |\n\n### Required manual checks — record browser, OS, assistive technology and date
 
 - [ ] Keyboard only: Tab, Shift+Tab, Enter, Space, arrows, Escape; no traps outside modal dialogs.
 - [ ] Dialog: opening focus is useful, focus stays inside, Escape/close works, and focus returns to the opener.
 - [ ] Screen reader: NVDA + Firefox or Chrome on Windows.
 - [ ] Screen reader: VoiceOver + Safari on iOS/macOS where available.
-- [ ] Screen reader: TalkBack + Chrome on Android.
+- [ ] Screen reader: TalkBack + Chrome on Android (test with actual Android device; record announcements and focus order).
 - [ ] Zoom/reflow: 200% browser zoom and 320 CSS px viewport without loss of essential content.
 - [ ] Mobile: touch targets, orientation changes, virtual keyboard, scrolling and sticky navigation.
 - [ ] Contrast: normal text 4.5:1; large text 3:1; meaningful non-text controls/focus indicators 3:1, measured in each theme.
@@ -39,3 +40,4 @@
 - [ ] Re-test after any consuming application overrides the tokens or component CSS.
 
 Axe checks are a useful automated baseline, not proof of WCAG conformance. Manual assistive-technology and usability testing remains a release requirement.
+\n\n## Release decision\n\nDo not label this package WCAG 2.2 AA conformant until the evidence log contains completed keyboard, screen-reader, mobile, zoom/reflow and contrast results for supported targets, with blocking issues fixed and retested. Automated axe and token checks are partial evidence only.\n
