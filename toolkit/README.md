@@ -20,3 +20,5 @@ Opt-in starter patterns. Copy only what a project needs; this is not a mandatory
 7. Record toolkit version and provenance in the consuming project.
 
 The starter package currently uses npm's latest tags as a bootstrap manifest; resolve and commit a lockfile immediately. Do not treat an unlocked dependency graph as a production release.
+
+- ui-library/: reusable React component package with accessible buttons, form controls, modal dialog, navigation, semantic data table, dashboard primitives and semantic design tokens.
