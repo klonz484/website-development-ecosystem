@@ -1,7 +1,7 @@
 # Component API reference
 
 ## Button
-Props: native button attributes, variant (primary | secondary | outline | ghost | danger), size (sm | md | lg), loading. Loading disables activation and exposes aria-busy. Always provide visible action text and set type explicitly inside forms.
+Props: native button attributes, variant (primary | secondary | outline | ghost | danger), size (sm | md | lg), loading. Loading disables activation and exposes aria-busy. Always provide visible action text. Buttons default to type=button; pass type=submit only for a form submit action.
 
 ## TextField / TextareaField / SelectField
 Props: native control attributes plus label, hint, error, id, required and className. Labels are always visible. Hints and errors are linked to the control. Error sets aria-invalid. Use the correct input type and autocomplete values.
