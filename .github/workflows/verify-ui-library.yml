@@ -37,7 +37,7 @@ jobs:
         env:
           BRANCH: ${{ github.head_ref }}
         run: |
-          if git diff --quiet -- toolkit/ui-library/package-lock.json; then exit 0; fi
+          if [ -z "$(git status --porcelain -- toolkit/ui-library/package-lock.json)" ]; then exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add toolkit/ui-library/package-lock.json
