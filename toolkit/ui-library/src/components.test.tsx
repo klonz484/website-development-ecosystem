@@ -7,6 +7,7 @@ describe("Button", () => {
     render(<Button loading>Save changes</Button>);
     expect(screen.getByRole("button", { name: "Save changes" })).toBeDisabled();
     expect(screen.getByRole("button")).toHaveAttribute("aria-busy", "true");
+    expect(screen.getByRole("button")).toHaveAttribute("type", "button");
   });
 });
 
