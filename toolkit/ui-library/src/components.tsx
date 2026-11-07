@@ -1,4 +1,4 @@
-import { forwardRef, useEffect, useId, useRef, type ButtonHTMLAttributes, type HTMLAttributes, type InputHTMLAttributes, type ReactNode, type SelectHTMLAttributes, type TextareaHTMLAttributes } from "react";
+import { forwardRef, useEffect, useId, useRef, type ButtonHTMLAttributes, type HTMLAttributes, type InputHTMLAttributes, type MouseEventHandler, type ReactNode, type SelectHTMLAttributes, type TextareaHTMLAttributes } from "react";
 
 export type ButtonVariant = "primary" | "secondary" | "outline" | "ghost" | "danger";
 export type ButtonSize = "sm" | "md" | "lg";
@@ -58,10 +58,10 @@ export function Dialog({ open, onOpenChange, title, description, children, foote
   return <dialog ref={ref} className={["ui-dialog", className].filter(Boolean).join(" ")} aria-labelledby={titleId} aria-describedby={description ? descriptionId : undefined} onClose={() => { if (open) onOpenChange(false); }} onClick={(event) => { if (closeOnBackdrop && event.target === ref.current) onOpenChange(false); }}><div className="ui-dialog__surface"><header className="ui-dialog__header"><div><h2 id={titleId} className="ui-dialog__title">{title}</h2>{description ? <p id={descriptionId} className="ui-dialog__description">{description}</p> : null}</div><Button type="button" variant="ghost" size="sm" aria-label={closeLabel} onClick={() => ref.current?.close()}>×</Button></header><div className="ui-dialog__content">{children}</div>{footer ? <footer className="ui-dialog__footer">{footer}</footer> : null}</div></dialog>;
 }
 
-export interface NavigationItem { href: string; label: string; current?: boolean; }
+export interface NavigationItem { href: string; label: ReactNode; current?: boolean; onClick?: MouseEventHandler<HTMLAnchorElement>; }
 export interface NavigationProps extends HTMLAttributes<HTMLElement> { items: NavigationItem[]; label?: string; orientation?: "horizontal" | "vertical"; }
 export function Navigation({ items, label = "Primary", orientation = "horizontal", className = "", ...props }: NavigationProps) {
-  return <nav {...props} aria-label={label} className={["ui-navigation", "ui-navigation--" + orientation, className].filter(Boolean).join(" ")}>{items.map((item) => <a key={item.href} className="ui-navigation__link" href={item.href} aria-current={item.current ? "page" : undefined}>{item.label}</a>)}</nav>;
+  return <nav {...props} aria-label={label} className={["ui-navigation", "ui-navigation--" + orientation, className].filter(Boolean).join(" ")}>{items.map((item) => <a key={item.href} className="ui-navigation__link" href={item.href} aria-current={item.current ? "page" : undefined} onClick={item.onClick}>{item.label}</a>)}</nav>;
 }
 
 export interface DataTableColumn<T> { key: string; header: ReactNode; render: (row: T) => ReactNode; align?: "start" | "center" | "end"; }
