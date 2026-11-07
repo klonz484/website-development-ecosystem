@@ -14,3 +14,8 @@
 - Added React 18-compatible component package with buttons, labelled form controls, native modal dialog, navigation, semantic tables and dashboard primitives.
 - Added semantic light/dark design tokens, component API reference, accessibility checklist and release/security checklist.
 - Added dedicated typecheck, unit-test and package-build CI workflow.
+
+## 0.3.1 — UI library accessibility and distribution hardening (in review)
+- Added programmatic descriptions for checkbox and switch controls and stronger reduced-motion behavior.
+- Added axe-based consumer scans, reproducible lockfile workflows, and a manual screen-reader/browser test matrix.
+- Added npm OIDC publishing workflow and first-release runbook; package namespace ownership remains to be confirmed.
