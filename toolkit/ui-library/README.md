@@ -32,7 +32,7 @@ Native HTML elements, visible labels, programmatic error descriptions, keyboard 
 - Dialog is controlled by open and onOpenChange.
 - Navigation renders ordinary anchors; supply real href destinations.
 - DataTable requires a stable getRowKey and explicit column renderers.
-- Buttons inside forms should pass type="button" unless they submit.
+- Buttons default to type="button"; pass type="submit" when they submit a form.
 - This is not a full design system, routing framework, form state library or authorization layer.
 
 ## Compatibility and provenance
