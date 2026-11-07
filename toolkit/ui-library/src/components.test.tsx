@@ -19,12 +19,12 @@ describe("form controls", () => {
     expect(input).toHaveAccessibleDescription("Use your school email Email is required");
   });
   it("renders native select, checkbox, switch, radio and textarea semantics", () => {
-    render(<><SelectField label="Grade"><option value="12">Grade 12</option></SelectField><CheckboxField label="Remember this device" /><SwitchField label="Enable reminders" /><RadioGroup label="Study mode" name="mode" options={[{ value: "guided", label: "Guided" }]} /><TextareaField label="Notes" /></>);
+    render(<><SelectField label="Grade"><option value="12">Grade 12</option></SelectField><CheckboxField label="Remember this device" description="Keep this browser signed in." /><SwitchField label="Enable reminders" description="Send a reminder before your study session." /><RadioGroup label="Study mode" name="mode" options={[{ value: "guided", label: "Guided" }]} /><TextareaField label="Notes" /></>);
     expect(screen.getByRole("combobox", { name: "Grade" })).toBeInTheDocument();
     expect(screen.getByRole("checkbox", { name: "Remember this device" })).toBeInTheDocument();
     expect(screen.getByRole("switch", { name: "Enable reminders" })).toBeInTheDocument();
-    expect(screen.getByRole("checkbox", { name: "Remember this device" })).toHaveAccessibleDescription("Remember this device");
-    expect(screen.getByRole("switch", { name: "Enable reminders" })).toHaveAccessibleDescription("Enable reminders");
+    expect(screen.getByRole("checkbox", { name: "Remember this device" })).toHaveAccessibleDescription("Keep this browser signed in.");
+    expect(screen.getByRole("switch", { name: "Enable reminders" })).toHaveAccessibleDescription("Send a reminder before your study session.");
     expect(screen.getByRole("radio", { name: "Guided" })).toBeInTheDocument();
     expect(screen.getByRole("textbox", { name: "Notes" })).toBeInTheDocument();
   });
