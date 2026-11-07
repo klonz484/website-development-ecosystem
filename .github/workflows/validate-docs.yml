@@ -1,0 +1,26 @@
+name: Validate ecosystem docs
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate required documentation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Check required files and resource links
+        shell: bash
+        run: |
+          set -euo pipefail
+          for file in README.md standards/ENGINEERING-CHARTER.md standards/ARCHITECTURE.md standards/SECURITY-AND-PRIVACY.md standards/ACCESSIBILITY.md standards/PERFORMANCE-AND-RELIABILITY.md workflows/PROJECT-LIFECYCLE.md workflows/PROJECT-CLOSEOUT.md quality/QUALITY-GATES.md learning/ROADMAP.md learning/COURSE-CATALOGUE.md CHANGELOG.md; do
+            test -s "$file" || { echo "Missing or empty: $file"; exit 1; }
+          done
+          grep -RInE '\]\(https?://' learning standards README.md >/dev/null
