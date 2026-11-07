@@ -23,6 +23,8 @@ describe("form controls", () => {
     expect(screen.getByRole("combobox", { name: "Grade" })).toBeInTheDocument();
     expect(screen.getByRole("checkbox", { name: "Remember this device" })).toBeInTheDocument();
     expect(screen.getByRole("switch", { name: "Enable reminders" })).toBeInTheDocument();
+    expect(screen.getByRole("checkbox", { name: "Remember this device" })).toHaveAccessibleDescription("Remember this device");
+    expect(screen.getByRole("switch", { name: "Enable reminders" })).toHaveAccessibleDescription("Enable reminders");
     expect(screen.getByRole("radio", { name: "Guided" })).toBeInTheDocument();
     expect(screen.getByRole("textbox", { name: "Notes" })).toBeInTheDocument();
   });
