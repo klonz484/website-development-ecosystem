@@ -40,5 +40,26 @@
     "react-dom": "18.3.1",
     "typescript": "5.7.3",
     "vitest": "2.1.8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/klonz484/website-development-ecosystem.git",
+    "directory": "toolkit/ui-library"
+  },
+  "homepage": "https://github.com/klonz484/website-development-ecosystem/tree/main/toolkit/ui-library#readme",
+  "bugs": {
+    "url": "https://github.com/klonz484/website-development-ecosystem/issues"
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "accessible",
+    "ui",
+    "design-system",
+    "components",
+    "wcag"
+  ],
+  "publishConfig": {
+    "access": "public"
   }
 }
