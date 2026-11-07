@@ -21,4 +21,4 @@ Useful in multiple projects; clear API and examples; dependencies and license/pr
 | toolkit/layouts | UX patterns | Dashboard/admin/SaaS layout guidance | Responsive web apps | Manual accessibility review | Ecosystem maintainers | 0.2.0-rc |
 | toolkit/operations | Operations | Deployment, monitoring, backup and recovery | Hosting-provider agnostic | Restore drills required per project | Ecosystem maintainers | 0.2.0-rc |
 
-| toolkit/ui-library | UI component package | Buttons, form controls, dialogs, navigation, tables, dashboard primitives and design tokens | React >=18.2; stylesheet imported by consumer | Vitest + Testing Library; axe + Playwright consumer checks; manual assistive-technology matrix required | Ecosystem maintainers | 0.1.1-rc |
+| toolkit/ui-library | UI component package | Buttons, form controls, dialogs, navigation, tables, dashboard primitives and design tokens | React >=18.2; stylesheet imported by consumer | Vitest + Testing Library; axe + Playwright consumer checks; manual assistive-technology matrix required | Ecosystem maintainers | 0.1.0-rc |
