@@ -13,3 +13,8 @@
 - Added a release-grade manual accessibility test matrix and axe-based consumer testing guidance.
 - Added reproducible npm lockfile generation and a CI workflow that commits the lockfile from trusted same-repository pull requests.
 - Added npm OIDC trusted-publishing workflow and first-publication runbook; initial npm scope ownership and bootstrap publication remain maintainer actions.
+
+## 0.1.1 — accessibility and release gate (in review)
+- Added a CI-enforced semantic color-token contrast check for light and dark themes.
+- Added explicit manual accessibility evidence requirements; keyboard, screen-reader and real-device checks remain pending until recorded by a tester.
+- Hardened the npm OIDC workflow by pinning the minimum supported Node 22 release and disabling package-manager caching.
